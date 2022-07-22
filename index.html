@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/global.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans&family=Work+Sans:wght@300;400;500&display=swap"
+        rel="stylesheet">
+    <link rel="shortcut icon" href="./img/ic.png" type="image/png">
+    <script src="//cdn.jsdelivr.net/npm/vivus@latest/dist/vivus.min.js"></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="left-block">
+            <h1>Sign up</h1>
+        </div>
+        <form class="form" id="form">
+            <div class="elem" id="elem">
+                <h2 class="form__title">New user?</h2>
+                <p class="form__subtitle">Use the form below to create your account.</p>
+                <div class="form__block">
+                    <div class="form__block-info">
+                        <label for="firstName">First Name</label>
+                        <input type="text" name="firstName" id="firstName" data-rule="firstName" REQUIRED>
+                    </div>
+                    <div class="form__block-info">
+                        <label for="lastName">Last Name</label>
+                        <input type="text" name="lastName" id="lastName" data-rule="lastName" REQUIRED>
+                    </div>
+                </div>
+                <div class="form__block">
+                    <div class="form__block-info">
+                        <label class="nationality" for="nationality">Nationality</label>
+                        <select name="nationality" id="nationality" data-rule="nationality" REQUIRED>
+                            <option class="countries" hidden disabled selected value label=" "></option>
+                        </select>
+                    </div>
+                    <div class="form__block-info">
+                        <label for="email">E-mail</label>
+                        <input type="email" name="email" id="email" data-rule="email" REQUIRED>
+                    </div>
+                </div>
+                <div class="form__block">
+                    <div class="form__block-info">
+                        <label for="dateOfBirth">Date of Birth</label>
+                        <div class="form__block-row">
+                            <select class="day" name="dayOfBirth" id="dateOfBirth" data-rule="dateOfBirth" REQUIRED>
+                                <option class="days" hidden disabled selected value label=" "></option>
+                            </select>
+                            <select class="month" name="monthOfBirth" data-rule="monthOfBirth" REQUIRED>
+                                <option class="months" hidden disabled selected value label=" "></option>
+                            </select>
+                            <select class="year" name="yearOfBirth" data-rule="yearOfBirth" REQUIRED>
+                                <option class="years" hidden disabled selected value label=" "></option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form__block-info">
+                        <label>Gender</label>
+                        <div class="form__block-gender">
+                            <label for="male" id="radio">
+                                <input type="radio" id="male" name="gender" data-rule="gender" REQUIRED>
+                                <span class="label"></span>Male
+                            </label>
+                            <label for="female" id="radio">
+                                <input type="radio" id="female" name="gender">
+                                <span class="label"></span>Female
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form__block">
+                    <div class="form__block-info">
+                        <label for="password1">Password</label>
+                        <input type="password" REQUIRED id="password1" data-rule="password1">
+                    </div>
+                    <div class="form__block-info">
+                        <label for="password2">Confirm Password</label>
+                        <input type="password" REQUIRED id="password2" data-rule="password2">
+                    </div>
+                </div>
+                <div class="form__block footer">
+                    <div class="footer__left">
+                        <p class="footer__left-login">Have an account? <a class="footer__left-link" href="#!">Login</a>
+                        </p>
+                    </div>
+                    <div class="footer__right">
+                        <input type="submit" class="footer__right-btn" id="shake" value="Complete Signup">
+                    </div>
+                </div>
+            </div>
+            <object id="icon" type="image/svg+xml" data="./img/icon.svg"></object>
+            <div class="wrapper__modal" id="wrapper__modal">
+                <div class="modal">
+                    <h2 class="modal__text">Thank You!</h2>
+                    <p>you registered!</p>
+                </div>
+                <div class="footer__left">
+                    <p class="footer__left-login">Have an account? <a class="footer__left-link" href="#!">Login</a>
+                    </p>
+                </div>
+            </div>
+        </form>
+    </div>
+    <script src="./script.js"></script>
+</body>
+
+</html>

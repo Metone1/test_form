@@ -1,0 +1,432 @@
+//===========левый блок==============
+
+.left-block {
+   width: 137px;
+   height: 100%;
+   background-color: #5A61ED;
+   color: #FFFFFF;
+   position: relative;
+   display: flex;
+   align-items: flex-end;
+
+   & h1 {
+      font-family: 'PT Sans', sans-serif;
+      font-style: normal;
+      font-size: 49px;
+      line-height: 1.29;
+      letter-spacing: 0.5px;
+      transform: rotate(-90deg);
+      width: 162px;
+      height: 62px;
+      flex: 1 0 auto;
+      position: relative;
+      bottom: 74px;
+      left: 18px;
+   }
+}
+
+//============== форма================
+
+.form {
+   position: relative;
+   width: calc(664px - 137px);
+   padding: 38.5px 22.5px 32.5px 20.8px;
+   z-index: 0;
+}
+
+.elem {
+   width: 100%;
+   height: 100%;
+}
+
+.form__title {
+   font-weight: 500;
+   font-size: 22px;
+   line-height: 1.2;
+   letter-spacing: -0.46px;
+   overflow: hidden;
+   white-space: nowrap;
+   text-overflow: ellipsis;
+   max-width: inherit;
+   height: 26px;
+}
+
+.form__subtitle {
+   font-weight: 300;
+   margin-bottom: 20px;
+   font-size: 14px;
+   line-height: 1.1;
+   white-space: nowrap;
+   overflow: hidden;
+   text-overflow: ellipsis;
+}
+
+//============== блоки формы=============
+
+.form__block {
+   display: flex;
+   width: 100%;
+   margin-bottom: 16.3px;
+   gap: 15px;
+
+   & label {
+      font-size: 12px;
+      font-weight: 300;
+      color: #7C7C7C;
+      line-height: 1.16;
+      display: block;
+      max-width: inherit;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      text-transform: capitalize;
+   }
+
+   & .form__block-info {
+      display: flex;
+      flex-direction: column;
+      min-width: 234.5px;
+   }
+
+   & .form__block-row {
+      display: flex;
+      justify-content: space-between;
+
+      & .day {
+         width: 56px;
+      }
+
+      & .month {
+         width: 91px;
+      }
+
+      & .year {
+         width: 67.7px;
+      }
+   }
+
+   & .form__block-gender {
+      display: flex;
+      gap: 19px;
+      align-items: center;
+      font-size: 14px;
+      line-height: 1.16;
+      color: #111111;
+      margin-top: 5.3px;
+      padding-bottom: 6.3px;
+      position: relative;
+   }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+   -webkit-transition-delay: 9999s;
+   transition-delay: 9999s;
+}
+
+input,
+select {
+   border: none;
+   font-size: 14px;
+   width: inherit;
+   padding: 5px 0 6px;
+   border-bottom: 1px solid #F2F2F2;
+   outline: none;
+   background: inherit;
+}
+
+select,
+.radio {
+   cursor: pointer;
+}
+
+input[type="radio"] {
+   position: absolute;
+   opacity: 0;
+   width: 0;
+   height: 0;
+}
+
+
+#radio {
+   line-height: 1.16;
+   font-size: 14px;
+   color: #111111;
+   font-weight: 400;
+}
+
+.label {
+   position: relative;
+   top: 2px;
+   left: 0;
+   display: inline-block;
+   width: 10px;
+   height: 10px;
+   border-radius: 6.3px;
+   border: 1px solid #5A61ED;
+   -webkit-tap-highlight-color: transparent;
+   margin-right: 6px;
+   box-sizing: content-box;
+}
+
+input[type="radio"]:checked+.label:after {
+   content: '';
+   position: absolute;
+   top: 2px;
+   left: 2px;
+   width: 6px;
+   height: 6px;
+   background: #5A61ED;
+   border-radius: 6.3px;
+}
+
+select {
+   -moz-appearance: none;
+   -webkit-appearance: none;
+   background-image: url('/img/Shape.svg');
+   background-repeat: no-repeat;
+   background-position: right top 50%;
+}
+
+//============ футер ===============
+
+.footer {
+   margin-top: 97.3px;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+}
+
+.footer__left-login {
+   width: 234.5px;
+   font-size: 13px;
+   font-weight: 200;
+   line-height: 1.1;
+   white-space: nowrap;
+   overflow: hidden;
+   text-overflow: ellipsis;
+   color: #000000;
+}
+
+.footer__left-link {
+   color: #5A61ED;
+   font-weight: 500;
+}
+
+.footer__right-btn {
+   background: #5A61ED;
+   font-size: 14px;
+   line-height: 1.29;
+   color: #FFFFFF;
+   font-family: 'PT Sans', sans-serif;
+   cursor: pointer;
+   white-space: nowrap;
+   overflow: hidden;
+   text-overflow: ellipsis;
+   padding: 7px 26px 7px 25px;
+   border: 0.5px solid #FFFFFF;
+}
+
+//=========== иконка =============
+
+#icon {
+   position: absolute;
+   bottom: 0;
+   right: 0;
+   z-index: -1;
+   max-width: 100%;
+}
+
+
+//=============== анимация всплытия блоков=============
+
+.form__block:nth-child(3) {
+   opacity: 0;
+   transition: 1s;
+   animation: fadeOut 1s 1;
+   animation-fill-mode: forwards;
+   animation-delay: 0.1s;
+
+   & .form__block-info:nth-child(2) {
+      opacity: 0;
+      transition: 1s;
+      animation: fadeOut 1s 1;
+      animation-fill-mode: forwards;
+      animation-delay: 0.3s;
+   }
+}
+
+.form__block:nth-child(4) {
+   opacity: 0;
+   transition: 1s;
+   animation: fadeOut 1s 1;
+   animation-fill-mode: forwards;
+   animation-delay: 0.4s;
+
+   & .form__block-info:nth-child(2) {
+      opacity: 0;
+      transition: 1s;
+      animation: fadeOut 1s 1;
+      animation-fill-mode: forwards;
+      animation-delay: 0.6s;
+   }
+}
+
+.form__block:nth-child(5) {
+   opacity: 0;
+   transition: 1s;
+   animation: fadeOut 1s 1;
+   animation-fill-mode: forwards;
+   animation-delay: 0.7s;
+
+   & .form__block-info:nth-child(2) {
+      opacity: 0;
+      transition: 1s;
+      animation: fadeOut 1s 1;
+      animation-fill-mode: forwards;
+      animation-delay: 0.9s;
+   }
+}
+
+.form__block:nth-child(6) {
+   opacity: 0;
+   transition: 1s;
+   animation: fadeOut 1s 1;
+   animation-fill-mode: forwards;
+   animation-delay: 1s;
+
+   & .form__block-info:nth-child(2) {
+      opacity: 0;
+      transition: 1s;
+      animation: fadeOut 1s 1;
+      animation-fill-mode: forwards;
+      animation-delay: 1.2s;
+   }
+}
+
+.form__block:nth-child(7) {
+   opacity: 0;
+   transition: 1s;
+   animation: fadeOut 1s 1;
+   animation-fill-mode: forwards;
+   animation-delay: 1.3s;
+
+   & .footer__right:nth-child(2) {
+      opacity: 0;
+      transition: 1s;
+      animation: fadeOut 1s 1;
+      animation-fill-mode: forwards;
+      animation-delay: 1.5s;
+   }
+}
+
+@keyframes fadeOut {
+   0% {
+      opacity: 0;
+   }
+
+   100% {
+      opacity: 1;
+   }
+}
+
+//============= shake кнопки================
+
+.shake {
+   animation: shake 0.3s;
+}
+
+@keyframes shake {
+   0% {
+      transform: translate(1px, 1px) rotate(0deg);
+   }
+
+   20% {
+      transform: translate(-2px, 0px) rotate(1deg);
+   }
+
+   40% {
+      transform: translate(1px, -1px) rotate(1deg);
+   }
+
+   60% {
+      transform: translate(-2px, 1px) rotate(0deg);
+   }
+
+   80% {
+      transform: translate(-1px, -1px) rotate(1deg);
+   }
+
+   100% {
+      transform: translate(1px, -1px) rotate(-1deg);
+   }
+}
+
+//=============== модальное окно============
+
+.wrapper__modal {
+   display: none;
+}
+
+.modal {
+   margin-top: 178px;
+   margin-bottom: 152px;
+   padding-left: 43px;
+
+   & p {
+      font-size: 14px;
+      line-height: 1.16;
+      margin-top: 11px;
+   }
+}
+
+.modal__text {
+   font-size: 22px;
+   line-height: 1.2;
+   letter-spacing: -0.46px;
+   color: #111111;
+}
+
+//=============== валидация===============
+
+.invalid {
+   border-bottom: 2px solid #FF2828;
+   // color: #FF2828;
+}
+
+.valid {
+   background-image: url('/img/1.svg');
+   background-repeat: no-repeat;
+   background-position: right top 50%;
+}
+
+//================= медиа ===============
+// @media screen and (max-width: 750px) {
+//    .form-wrap {
+//       padding: 0;
+
+//    }
+
+//    .form {
+//       min-width: 85%;
+//       padding: 38px 10px 32px 10px;
+//    }
+
+//    .name-form {
+//       min-width: 15%;
+//    }
+
+//    .test {
+//       font-size: 35px;
+//    }
+
+//    .row {
+//       flex-direction: column;
+//    }
+
+//    .form__block {
+//       width: 100%;
+//    }
+// }
