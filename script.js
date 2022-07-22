@@ -24,7 +24,7 @@ for (let i = month.length - 1; i >= 0; i--) {
 }
 
 //===years===
-for (let i = 2022; i >= 1900; i--) {
+for (let i = 1900; i < 2022; i++) {
    let years = document.querySelector('.years');
    years.insertAdjacentHTML('afterend', `<option>${i}</option >`)
 }
@@ -88,11 +88,11 @@ document.addEventListener("DOMContentLoaded", function () {
          //======== first and last name ===========
          if (rule == 'firstName' || rule == 'lastName') {
             const pattern = /^[a-zA-Z\s]+$/i;
-            (pattern.test(elem.value)) ? elem.classList.remove('invalid') : elem.classList.add('invalid');
+            (pattern.test(elem.value)) ? elem.classList.remove('invalid_color') : elem.classList.add('invalid_color');
          }
          //========= email ============
          else if (rule == 'email') {
-            validateEmail(elem) ? elem.classList.remove('invalid') : elem.classList.add('invalid');
+            validateEmail(elem) ? elem.classList.remove('invalid_color') : elem.classList.add('invalid_color');
          }
          //========= gender ===========
          else if (rule == "gender") {
