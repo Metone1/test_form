@@ -100,6 +100,10 @@
       margin-bottom: 20px;
       font-size: 14px;
    }
+
+   @media(max-width: 510px) {
+      white-space: normal;
+   }
 }
 
 //============== блоки формы=============
@@ -136,7 +140,7 @@
       }
 
       @media(max-width: 700px) {
-         font-size: 14px;
+         font-size: 15px;
       }
    }
 
@@ -148,6 +152,10 @@
       @media(max-width: 1439px) {
          min-width: 235px;
       }
+
+      @media(max-width: 510px) {
+         min-width: 150px;
+      }
    }
 
    & .form__block-row {
@@ -158,11 +166,7 @@
          width: 2.917vw;
 
          @media(max-width: 1439px) {
-            width: 56px;
-         }
-
-         @media(max-width: 700px) {
-            width: 86px;
+            width: 24%;
          }
       }
 
@@ -170,11 +174,7 @@
          width: 4.74vw;
 
          @media(max-width: 1439px) {
-            width: 91px;
-         }
-
-         @media(max-width: 700px) {
-            width: 121px;
+            width: 39%;
          }
       }
 
@@ -182,11 +182,7 @@
          width: 3.526vw;
 
          @media(max-width: 1439px) {
-            width: 68px;
-         }
-
-         @media(max-width: 700px) {
-            width: 98px;
+            width: 29%;
          }
       }
    }
