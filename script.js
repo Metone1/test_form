@@ -90,7 +90,11 @@ document.addEventListener("DOMContentLoaded", function () {
          }
          //========= email ============
          else if (rule == 'email') {
-            validateEmail(elem) ? elem.classList.remove('invalid_color') : elem.classList.add('invalid_color');
+            if (validateEmail(elem)) {
+               elem.classList.remove('invalid_color');
+               elem.classList.add('valid');
+            }
+            else elem.classList.add('invalid_color');
          }
          //========= gender ===========
          else if (rule == "gender") {
