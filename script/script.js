@@ -94,7 +94,10 @@ document.addEventListener("DOMContentLoaded", function () {
                elem.classList.remove('invalid_color');
                elem.classList.add('valid');
             }
-            else elem.classList.add('invalid_color');
+            else {
+               elem.classList.add('invalid_color');
+               elem.classList.remove('valid');
+            }
          }
          //========= gender ===========
          else if (rule == "gender") {
