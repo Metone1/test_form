@@ -40,7 +40,7 @@ for (let i = countrie1.length - 1; i >= 0; i--) {
 
 //============== script ================
 document.addEventListener("DOMContentLoaded", function () {
-   const inputs = document.querySelectorAll("[data-rule]");
+   // const inputs = document.querySelectorAll("[data-rule]");
    const gender = document.querySelector(".form__block-gender");
    const form = document.getElementById('form');
    form.addEventListener('submit', formSend);
@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
       formValidate(form);
       let formData = new FormData(form);
 
-      let response = await fetch('script.js', {
+      let response = await fetch('http://localhost:3000/server_ok', {
          method: 'POST',
          body: formData
       });
@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", function () {
          document.getElementById("elem").style.display = "none";
          document.getElementById("icon").style.display = "none";
          document.getElementById("wrapper__modal").style.display = "block";
-         document.getElementById("form").reset();
+         // document.getElementById("form").reset();
       }
       else {
          ErrorHandler();
@@ -82,6 +82,8 @@ document.addEventListener("DOMContentLoaded", function () {
       for (let i = 0; i < inputs.length; i++) {
          let rule = inputs[i].dataset.rule;
          let elem = inputs[i];
+
+         elem.addEventListener('change', () => elem.setCustomValidity(""))
 
          //======== first and last name ===========
          if (rule == 'firstName' || rule == 'lastName') {
@@ -116,9 +118,16 @@ document.addEventListener("DOMContentLoaded", function () {
          //========== password ==========
          else if (rule == 'password1') {
             passwordTest(elem) ? elem.classList.remove('invalid') : elem.classList.add('invalid');
+            if (!passwordTest(elem)) elem.setCustomValidity("Пароль должен содержать от 8 символов, заглавные и строчные буквы, а также цифры");
          }
          else if (rule == 'password2') {
-            elem.value !== inputs[i - 1].value ? elem.classList.add('invalid') : elem.classList.remove('invalid');
+            if (elem.value !== inputs[i - 1].value) {
+               elem.classList.add('invalid');
+               elem.setCustomValidity("Пароли не совпадают");
+            }
+            else if (elem.value == inputs[i - 1].value) {
+               elem.classList.remove('invalid');
+            }
          }
 
 
@@ -133,5 +142,3 @@ document.addEventListener("DOMContentLoaded", function () {
       }
    }
 });
-
-
