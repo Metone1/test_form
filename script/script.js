@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
       formValidate(form);
       let formData = new FormData(form);
 
-      let response = await fetch('http://localhost:3000' {
+      let response = await fetch('http://localhost:3000/server_ok', {
          method: 'POST',
          body: formData
       });
